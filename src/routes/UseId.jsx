@@ -23,3 +23,9 @@ export default function UseIdComponent() {
     </>
   );
 }
+
+//unique identifier that is consistant with component, and consistant across redners and destinations
+
+//colons so not used for css selectors
+
+//dont use multiple times inside one component
