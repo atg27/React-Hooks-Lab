@@ -2,7 +2,7 @@ import { memo, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 const UseRefMemo = memo(function UseRef() {
-  const renderTarget = useRef();
+  const renderTarget = useRef(); // 
 
   useEffect(() => {
     let continueRendering = true;
@@ -15,7 +15,7 @@ const UseRefMemo = memo(function UseRef() {
     );
     const renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderTarget.current.appendChild(renderer.domElement);
+    renderTarget.current.appendChild(renderer.domElement); //we use the direct dom node to inser the three.js app; renderTarget is object with only 1 property exposed (current)
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshLambertMaterial({ color: 0x00ff00 });
     const cube = new THREE.Mesh(geometry, material);
@@ -42,6 +42,7 @@ const UseRefMemo = memo(function UseRef() {
   return (
     <div className="use-ref page">
       <div ref={renderTarget} className="scene"></div>
+      {/* store this particular div into the render target; rendering three.js app into react; could use id="" but that doesnt guarentee the same dom element */}
     </div>
   );
 });
