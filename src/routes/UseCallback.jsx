@@ -12,6 +12,11 @@ export default function Home() {
 
   const aUsefulCallback = () => {};
   const memoizedCallback = useCallback(aUsefulCallback, []);
+  // memoized so that component isnt re-rendered every single time
+
+  // same ^
+  // const memoizedCallback = useMemo(()=>
+  // aUsefulCallback, []);
 
   return (
     <div>
@@ -20,6 +25,7 @@ export default function Home() {
         className="ball"
       ></div>
       <UseRefComponent cb={memoizedCallback} />
+      {/* if cb wasnt memoized, the visual wouldnt render (due to too many rerenders) */}
     </div>
   );
 }
