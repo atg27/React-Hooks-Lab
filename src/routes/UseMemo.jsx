@@ -5,6 +5,7 @@ export default function Home() {
   const [count, setCount] = useState(35);
   const [left, setLeft] = useState(0);
   const value = useMemo(() => expensiveMathOperation(count), [count]);
+  //only recalculate when count changes
 
   useEffect(() => {
     requestAnimationFrame(animate);
