@@ -9,6 +9,7 @@ const LayoutEffectComponent = () => {
     setWidth(el.current.clientWidth);
     setHeight(el.current.clientHeight);
   });
+  // only getting one rerender instead of 2; synchronously after render function ends layoutEffect runs
 
   return (
     <div>
