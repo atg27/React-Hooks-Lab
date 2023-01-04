@@ -5,6 +5,7 @@ const limit100 = (num, max) => (num < 0 ? 0 : num > max ? max : num);
 
 const step = 20;
 
+// function that takes in state (HSL), takes in action (increment, decrement), and returns a new state; this is very testable and thus, manageable
 const reducer = (state, action) => {
   switch (action.type) {
     case 'INCREMENT_H':
